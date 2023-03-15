@@ -184,5 +184,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
+  web_usb:
+    dependency: "direct main"
+    description:
+      name: web_usb
+      sha256: "7ac2952885a2ddd33c500898ff048365df44406af2ba1211430d89926c7c4f9e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.0"
 sdks:
   dart: ">=2.19.2 <3.0.0"
