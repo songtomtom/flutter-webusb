@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:modi_webusb/web_usb.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -6,7 +7,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const CupertinoApp(
-      theme: CupertinoThemeData(brightness: Brightness.light),
+      theme: CupertinoThemeData(
+        brightness: Brightness.light,
+        primaryColor: CupertinoColors.systemGrey,
+      ),
       home: MyHomePage(),
     );
   }
@@ -20,12 +24,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final List<String> buttonTexts = [
-    'Connect',
-  ];
+  WebUSB webusb = WebUSB();
 
-  void _onButtonPressed(String text) {
-    print('$text 버튼을 눌렀습니다.');
+  Future<void> _onConnectButtonPressed() async {
+    await webusb.connect();
   }
 
   @override
@@ -35,21 +37,14 @@ class _MyHomePageState extends State<MyHomePage> {
         middle: Text('Flutter WebUSB Test App'),
       ),
       child: SafeArea(
-        child: Center(
-          child: SizedBox(
-            width: 300,
-            child: ListView.builder(
-              itemCount: buttonTexts.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: CupertinoButton(
-                    color: CupertinoColors.systemGrey2,
-                    onPressed: () => _onButtonPressed(buttonTexts[index]),
-                    child: Text(buttonTexts[index]),
-                  ),
-                );
-              },
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            alignment: Alignment.topCenter,
+            child: CupertinoButton(
+              color: CupertinoColors.systemGrey2,
+              onPressed: () => _onConnectButtonPressed(),
+              child: Text('Connect'),
             ),
           ),
         ),
