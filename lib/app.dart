@@ -24,10 +24,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  WebUSB webusb = WebUSB();
+  WebUsbController webusbController = WebUsbController();
 
   Future<void> _onConnectButtonPressed() async {
-    await webusb.connect();
+    await webusbController.connect();
   }
 
   @override
