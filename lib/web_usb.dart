@@ -4,7 +4,7 @@ import 'dart:js' show allowInterop;
 import 'dart:typed_data';
 
 import 'package:flutter/cupertino.dart';
-import 'package:modi_webusb/src/web_usb.dart';
+import 'package:flutter_webusb/src/web_usb.dart';
 
 class WebUsbController {
   static const int _vendorId = 0x2fde;

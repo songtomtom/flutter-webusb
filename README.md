@@ -1,4 +1,4 @@
-# modi_webusb
+# flutter_webusb
 
 A new Flutter project.
 

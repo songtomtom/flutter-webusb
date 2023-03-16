@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:modi_webusb/web_usb.dart';
+import 'package:flutter_webusb/web_usb.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

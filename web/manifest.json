@@ -1,6 +1,6 @@
 {
-    "name": "modi_webusb",
-    "short_name": "modi_webusb",
+    "name": "flutter_webusb",
+    "short_name": "flutter_webusb",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
